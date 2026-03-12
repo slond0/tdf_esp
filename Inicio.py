@@ -8,12 +8,12 @@ from nltk.stem import SnowballStemmer
 st.title("🔍 Demo TF-IDF en Español")
 
 # Documentos de ejemplo
-default_docs = """El perro ladra fuerte en el parque.
-El gato maúlla suavemente durante la noche.
-El perro y el gato juegan juntos en el jardín.
-Los niños corren y se divierten en el parque.
-La música suena muy alta en la fiesta.
-Los pájaros cantan hermosas melodías al amanecer."""
+default_docs = """El sensor mide la temperatura del ambiente en tiempo real.
+El sistema IoT envía los datos de humedad al servidor mediante MQTT.
+La interfaz gráfica muestra la temperatura y la humedad recibidas del ESP32.
+Los datos del sensor se actualizan continuamente en el panel de monitoreo.
+La red inalámbrica permite transmitir información desde el dispositivo.
+El sistema de visualización facilita la interpretación de los datos ambientales."""
 
 # Stemmer en español
 stemmer = SnowballStemmer("spanish")
@@ -34,29 +34,29 @@ col1, col2 = st.columns([2, 1])
 
 with col1:
     text_input = st.text_area("📝 Documentos (uno por línea):", default_docs, height=150)
-    question = st.text_input("❓ Escribe tu pregunta:", "¿Dónde juegan el perro y el gato?")
+    question = st.text_input("❓ Escribe tu pregunta:", "¿Cómo se miden la temperatura y la humedad con sensores?")
 
 with col2:
     st.markdown("### 💡 Preguntas sugeridas:")
     
     # NUEVAS preguntas optimizadas para mayor similitud
-    if st.button("¿Dónde juegan el perro y el gato?", use_container_width=True):
+    if st.button("¿Los sensores pueden medir temperatura y humedad?", use_container_width=True):
         st.session_state.question = "¿Dónde juegan el perro y el gato?"
         st.rerun()
     
-    if st.button("¿Qué hacen los niños en el parque?", use_container_width=True):
+    if st.button("¿MQTT es un protocolo usado para transmitir datos entre dispositivos?", use_container_width=True):
         st.session_state.question = "¿Qué hacen los niños en el parque?"
         st.rerun()
         
-    if st.button("¿Cuándo cantan los pájaros?", use_container_width=True):
+    if st.button("¿Un sistema IoT puede enviar datos por internet?", use_container_width=True):
         st.session_state.question = "¿Cuándo cantan los pájaros?"
         st.rerun()
         
-    if st.button("¿Dónde suena la música alta?", use_container_width=True):
+    if st.button("¿Processing puede mostrar datos de sensores en tiempo real?", use_container_width=True):
         st.session_state.question = "¿Dónde suena la música alta?"
         st.rerun()
         
-    if st.button("¿Qué animal maúlla durante la noche?", use_container_width=True):
+    if st.button("¿El ESP32 puede conectarse a una red WiFi?", use_container_width=True):
         st.session_state.question = "¿Qué animal maúlla durante la noche?"
         st.rerun()
 
